@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Novel Writing Ideas from Ancient Chinese Legends</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #vr-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+        #background-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #legend-text {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            font-size: 24px;
+            font-family: 'Arial', sans-serif;
+            padding: 10px; /* Added padding for better visibility */
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            border-radius: 5px; /* Optional: Add rounded corners */
+        }
+
+        #regenerate-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="vr-container">
+        <img id="background-image" alt="Chinese Minorities Background">
+        <div id="legend-text">Get Novel Writing Ideas from Ancient Chinese Legends</div>
+        <button id="regenerate-btn" onclick="regenerateIdea()">Click Here to Regenerate Legend</button>
+    </div>
+
+    <script>
+        const characters = ["Zhuang Warrior", "Hui Explorer", "Manchu Shaman", "Mongolian Nomad", "Miao Enchantress", "Dong Artisan"];
+        const settings = ["Zhuang Village", "Hui Mosque Courtyard", "Manchu Pine Forest", "Mongolian Steppes", "Miao Rice Terraces", "Dong Hillside Village"];
+        const plotElements = [
+            "Preserving Zhuang Cultural Heritage",
+            "Hui Scholar's Journey for Knowledge",
+            "Manchu Quest for Spiritual Balance",
+            "Mongolian Nomad's Epic Migration",
+            "Miao Guardian of Ancient Secrets",
+            "Dong Artisan's Creation of a Magical Artefact"
+        ];
+
+        const characterBackgrounds = {
+            "Zhuang Warrior": "images/Zhuang.webp",
+            "Hui Explorer": "images/hui.webp",
+            "Manchu Shaman": "images/forbidden.webp",
+            "Mongolian Nomad": "images/mon.webp",
+            "Miao Enchantress": "images/miao2.jpg",
+            "Dong Artisan": "images/dong.webp"
+        };
+
+        // Function to change legend text and background image
+        function regenerateIdea() {
+            const character = getRandomItem(characters);
+            const setting = getRandomItem(settings);
+            const plotElement = getRandomItem(plotElements);
+
+            const novelIdea = `In a land where ${character.toLowerCase()} embarks on a journey through the ${setting.toLowerCase()}, encountering challenges related to ${plotElement.toLowerCase()}.`;
+
+            document.getElementById("legend-text").innerText = `Legend: ${novelIdea}`;
+
+            // Set the background image based on the selected character
+            const backgroundImage = characterBackgrounds[character];
+            document.getElementById("background-image").src = backgroundImage;
+        }
+
+        // Function to get a random item from an array
+        function getRandomItem(array) {
+            const index = Math.floor(Math.random() * array.length);
+            return array[index];
+        }
+    </script>
+</body>
+</html>
