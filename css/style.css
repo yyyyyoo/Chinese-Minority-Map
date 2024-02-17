@@ -1,0 +1,154 @@
+body{
+	background: url("../images/yi.png");
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-size: auto;
+	background-position: top;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: 130%;
+}
+
+/* heading style */
+h1, h2, h3, h4{
+	color: #A1332F;
+	font-family: 'Nanum Brush Script', cursive;
+	line-height: 0.8;
+}
+
+h1{
+	font-size: 5em;
+}
+
+h3, h4{
+	font-size: 3em;
+}
+
+/* Mobile */
+table{
+	margin: 5px;
+}
+
+td{
+	padding-top: 30px;
+}
+
+.container{
+	margin-bottom: 5%;
+	background-color: rgba(255,255,255,80%);
+	max-width: 100%;
+}
+
+/* Desktop */
+@media (min-width:900px) {
+	table{
+		margin: 20px;
+	}
+
+	td, th{
+		padding: 20px;
+	}
+
+	.container{
+		margin-top: 1%;
+		margin-bottom: 5%;
+		background-color: rgba(255,255,255,80%);
+		max-width: 78%;
+	}
+
+}
+
+.subheading{
+	font-family: poppins;
+	font-size: 1.4em;
+}
+
+.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+
+#map{
+	height:600px;
+	width:100%;
+}
+
+.overlay {
+	/* padding: 30px; */
+    position: absolute;
+		z-index: 999;
+		top: 100.2px;
+		margin-left:20%;
+		margin-right:20%;
+    width: 40%;
+    text-align: center;
+    background-color: lightgrey;
+    border-radius: 10px;
+    font-size: 20px;
+    height: 400px;
+    opacity: 0;
+    transition: opacity .2s ease-out;
+}
+
+.detail-para{
+	  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+	  font-weight: 400;
+	  font-size: 1.5rem;
+	  line-height: 1.5;
+	  letter-spacing: 0.00938em;
+		margin: 2% auto;
+}
+
+/* #close {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background:grey;
+		cursor: pointer;
+} */
+
+/* modal style */
+/* The Modal (background) */
+/* .modal {
+ display: none; /* Hidden by default */
+ position: fixed; /* Stay in place */
+ z-index: 1; /* Sit on top */
+ left: 0;
+ top: 0;
+ width: 100%; /* Full width */
+ height: 100%; /* Full height */
+ overflow: auto; /* Enable scroll if needed */
+ background-color: rgb(0,0,0); /* Fallback color */
+ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+} */
+
+/* Modal Content/Box */
+.modal-content {
+ background-color: #fefefe;
+ margin: 3% auto; /* 15% from the top and centered */
+ padding: 20px;
+ border: 1px solid #888;
+ width: 40%;
+}
+
+/* The Close Button */
+.close {
+ color: red;
+ float: right;
+ font-size: 28px;
+ font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+ color: black;
+ text-decoration: none;
+ cursor: pointer;
+}
+
+.caption{
+	font-size: 13px;
+	color: rgba(0,0,0,50%);
+	margin-top: 5px;
+	text-align: center;
+}
