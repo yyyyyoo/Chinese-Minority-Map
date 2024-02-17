@@ -1,102 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Novel Writing Ideas from Ancient Chinese Legends</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
-
-        #vr-container {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-}
-
-        #background-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        #legend-text {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            color: white;
-            font-size: 24px;
-            font-family: 'Arial', sans-serif;
-            padding: 10px; /* Added padding for better visibility */
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-            border-radius: 5px; /* Optional: Add rounded corners */
-        }
-
-        #regenerate-btn {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            padding: 10px;
-            background-color: #3498db;
-            color: white;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-family: 'Arial', sans-serif;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="Yuqi Hu, China Highlights, W3Schools, and Bootstrap contributors">
+  <title>12 Chinese Minorities</title>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!--style css-->
+  <link href="css/style.css" rel="stylesheet">
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Nanum+Brush+Script&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div id="vr-container">
-        <img id="background-image" alt="Chinese Minorities Background">
-        <div id="legend-text">Get Novel Writing Ideas from Ancient Chinese Legends</div>
-        <button id="regenerate-btn" onclick="regenerateIdea()">Click Here to Regenerate Legend</button>
-    </div>
+  <!-- Tab nav -->
+  <!-- Credit to W3 School: https://www.w3schools.com/bootstrap/bootstrap_tabs_pills.asp -->
+  <div class="container">
+    <h1 class="text-center font-weight-bold">Chinese Minorities Map</h1>
+    <p class="text-center gm-style subheading">Learn about the 6 unique minority ethnic groups in China!</p>
+        <p class="text-center gm-style subheading">Colors represent their origins, sizes of the shape represent the population</p>
+    <ul class="nav nav-pills text-center">
+      <li class="active"><a data-toggle="pill" href="#home">Map</a></li>
+      <li><a data-toggle="pill" href="#menu1">List</a></li>
+    </ul>
 
-    <script>
-        const characters = ["Zhuang Warrior", "Hui Explorer", "Manchu Shaman", "Mongolian Nomad", "Miao Enchantress", "Dong Artisan"];
-        const settings = ["Zhuang Village", "Hui Mosque Courtyard", "Manchu Pine Forest", "Mongolian Steppes", "Miao Rice Terraces", "Dong Hillside Village"];
-        const plotElements = [
-            "Preserving Zhuang Cultural Heritage",
-            "Hui Scholar's Journey for Knowledge",
-            "Manchu Quest for Spiritual Balance",
-            "Mongolian Nomad's Epic Migration",
-            "Miao Guardian of Ancient Secrets",
-            "Dong Artisan's Creation of a Magical Artefact"
-        ];
+    <div class="tab-content">
+  <!-- Tab #1 -->
+      <div id="home" class="tab-pane fade in active">
+  <!-- Map -->
+          <div id="map"></div>
+      </div>
 
-        const characterBackgrounds = {
-            "Zhuang Warrior": "images/Zhuang.webp",
-            "Hui Explorer": "images/hui.webp",
-            "Manchu Shaman": "images/forbidden.webp",
-            "Mongolian Nomad": "images/mon.webp",
-            "Miao Enchantress": "images/miao2.jpg",
-            "Dong Artisan": "images/dong.webp"
-        };
+      <div id="menu1" class="tab-pane fade">
+        <table id ="table">
+         <tr>
+          <th>Minorties</th>
+          <th>Ethnic Traits</th>
+          <th>Explore</th>
+         </tr>
+         <tr>
+              <td></td>
+              <td></td>
+              <td><button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal1">Learn More</button></td>
+         </tr>
+         <tr>
+              <td></td>
+              <td></td>
+              <td><button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal2">Learn More</button></td>
+         </tr>
+         <tr>
+              <td></td>
+              <td></td>
+              <td><button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal3">Learn More</button></td>
+         </tr>
+         <tr>
+              <td></td>
+              <td></td>
+              <td><button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal4">Learn More</button></td>
+         </tr>
+         <tr>
+              <td></td>
+              <td></td>
+              <td><button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal5">Learn More</button></td>
+         </tr>
+         <tr>
+              <td></td>
+              <td></td>
+              <td><button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal6">Learn More</button></td>
+         </tr>
 
-        // Function to change legend text and background image
-        function regenerateIdea() {
-            const character = getRandomItem(characters);
-            const setting = getRandomItem(settings);
-            const plotElement = getRandomItem(plotElements);
 
-            const novelIdea = `In a land where ${character.toLowerCase()} embarks on a journey through the ${setting.toLowerCase()}, encountering challenges related to ${plotElement.toLowerCase()}.`;
 
-            document.getElementById("legend-text").innerText = `Legend: ${novelIdea}`;
 
-            // Set the background image based on the selected character
-            const backgroundImage = characterBackgrounds[character];
-            document.getElementById("background-image").src = backgroundImage;
-        }
 
-        // Function to get a random item from an array
-        function getRandomItem(array) {
-            const index = Math.floor(Math.random() * array.length);
-            return array[index];
-        }
+
+        </table>
+
+      </div>
+
+  <!-- Modal1 Zhuang-->
+<div id="myModal1" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h3 class="modal-title">Zhuang People</h3>
+  </div>
+  <div class="modal-body">
+    <h4>History</h4>
+    <p>The Zhuang, the largest ethnic minority of China, are a Tai-speaking ethnic group who mostly live in the Guangxi Zhuang Autonomous Region in Southern China. In history, they are known as a people who sometimes made alliances and carved out kingdoms and empires of their own around Guangxi and Yunnan.</p>
+    <h4>Clothing</h4>
+    <p>Traditional costumes are worn in ethnic areas or for special occasions. Dexterous Zhuang women use hand-woven fabric to make clothes of various styles. Usually, girls wear a blue-and-black collarless jacket and baggy trousers or batik skirts. A delicately embroidered apron is fastened on the waist. Boys dressed in black front-opening coats with cloth-wrapped buttons, and they wear a belts. Zhuang people fancy silver accessories for jewelry and clothing decorations.</p>
+    <a class="ref" href="https://www.chinahighlights.com/travelguide/nationality/">Reference: chinahighlights</a>
+<hr>
+<img class="box" src="images/Zhuang.webp" width="100%">
+<p class="caption">A Zhuang Girl</p>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal3 Manchu-->
+<div id="myModal3" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h3 class="modal-title">Manchu People</h3>
+  </div>
+  <div class="modal-body">
+    <h4>History</h4>
+    <p>The Manchu ethnic group in China are the descendants of the Manchus and Mongolians who invaded the Ming Empire and created the Qing Empire (1664–1912). Now about 11 million live in China. After the founding of the Qing Empire, the Manchus were assimilated with the majority Han. Now, only a small percentage speak the traditional language.</p>
+    <img class="box" src="images/forbidden.webp" width="100%">
+    <p class="caption">The Forbidden City is where you can see how the Manchu dynastic clan lived together</p>
+    <h4>Manchu Hair Styles</h4>
+    <p>Traditionally, as recently as about 100 years ago, the Manchu men wore pigtails, but they shaved the front of their heads as in the picture. They thought this hairstyle made movement easier when in the field or on horseback. During the Qing Dynasty, their hairstyles developed over time. They imposed this hairstyle on the Han people.</p>
+    <img class="box" src="images/hairstyle.jpg" width="100%">
+    <p class="caption">Manchu Hairstyles</p>
+  <div class="modal-footer">
+    <a class="ref" href="https://www.chinahighlights.com/travelguide/nationality/">Reference: chinahighlights</a>
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal4 Mongo-->
+<div id="myModal4" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h3 class="modal-title">Mongolians</h3>
+  </div>
+  <div class="modal-body">
+    <h4>Clothing</h4>
+    <p>An effect of being on the Silk Road is that Mongolian people like to wear silk and satin for special occasions. The caftan, hat, sash and boots are indispensable for Mongolian attire. The long and wide sleeves can be rolled down to protect from the sun, wind or rain.</p>
+    <h4>Festivals</h4>
+    <p>The Naadam Grassland Festival in the Inner Mongolia Autonomous Region is the Mongolians' most magnificent yearly entertainment event in China, It combines the traditional "Three Manly Games" of Naadam – wrestling, horse racing, and archery – with cultural exhibits and even livestock fair.</p>
+    <a class="ref" href="https://www.chinahighlights.com/travelguide/nationality/">Reference: chinahighlights</a>
+<hr>
+<img class="box" src="images/mon.webp" width="100%">
+<p class="caption">Two Mongolians Wrestling</p>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal5 Miao-->
+<div id="myModal5" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h3 class="modal-title">Miao People</h3>
+  </div>
+  <div class="modal-body">
+    <h4>New Year</h4>
+    <p>The Miao people celebrate their own New Year's Day. It falls during the tenth month of the lunar calendar (late October or November). This is the most important festival for the Miao ethnic group. It symbolizes the start of something new and fruitful.</p>
+    <h4>Customs</h4>
+    <p>The Miao people are great observers of etiquette. They are also very hospitable and pay respect to their guests. Those who have come from far-off places are given a special drink called horn spirit. This is an alcoholic drink served to pay respect to guests.</p>
+    <a class="ref" href="https://www.chinahighlights.com/travelguide/nationality/">Reference: chinahighlights</a>
+<hr>
+<img class="box" src="images/miao2.jpg" width="100%">
+<p class="caption">Miao Girls</p>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal8 Tibetans -->
+<div id="myModal8" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h3 class="modal-title">Tibetans</h3>
+  </div>
+  <div class="modal-body">
+    <h4>Language</h4>
+    <p>Tibetan ethnic speak their own language, the Tibetan language is divided by scholars into four dialects. Unlike many of the ethnic groups of China, the Tibetans have their own ethnic indigenously developed writing system. It was developed to its present form in the 9th century. They have a body of religious and historical literature from ancient times that helps to define their culture.</p>
+    <h4>Religion</h4>
+    <p>The main religion of Tibetans has been Tibetan Buddhism. Tibetan Buddhist believers must recite or chant Buddhism scriptures very often to earn karma merit. It is thought that the greater number of prayers they can perform, the better their karmas become and the better their fates. To increase the number of prayers they perform, they may try to turn prayer wheels as often as possible as shown in the picture.</p>
+    <a class="ref" href="https://www.chinahighlights.com/travelguide/nationality/">Reference: chinahighlights</a>
+<hr>
+<img class="box" src="images/zang2.webp" width="100%">
+<p class="caption">A Tibetan Elder Turning Prayer Wheels</p>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal11 Yi -->
+<div id="myModal11" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h3 class="modal-title">Naxi People</h3>
+  </div>
+  <div class="modal-body">
+    <h4>The Girls' Coming of Age Custom</h4>
+    <p>In the Mt. Liangshan and Lesser Mt. Liangshan areas, a ceremony known as ‘Shalaluo’ in the Yi language has been observed for many generations. Shalaluo is an adult ceremony for the girls. It means girls taking off their girl’s skirt and putting on an adult one. Before the ceremony, girls wear red-and-white dresses and wear a ponytail. After the ceremony, they will wear long skirts with blue and black colors, braid their hair into two braids, and begin to wear earrings. The ceremony is usually done when a girl reaches the age of 15 or 17.</p>
+    <h4>The Torch Festival</h4>
+    <p>It is a traditional festival for the Yi ethnic group. It falls between the 24th day to the 26 day of the sixth lunar month, i.e. in July or August. The origin of the festival is related to their ancient ancestor's worship of fire that they believed to have the power to repel insects, ward off evils, and protect the growth of crops. In some villages, it is a tradition for the elderly to pass down their farming experience to the younger generation during the festival.</p>
+    <a class="ref" href="https://www.chinahighlights.com/travelguide/nationality/">Reference: chinahighlights</a>
+<hr>
+<img class="box" src="images/yi.webp" width="100%">
+<p class="caption">A Pair of Yi People Dancing and Singing</p>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwSY4UjTAKVMxuhIvugL4kvZhKn0ugr6A&callback=initMap">
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
